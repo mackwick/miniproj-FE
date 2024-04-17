@@ -22,7 +22,7 @@ export const createAction = async ({ request }: any) => {
 };
 
 //UPDATE
-export const updateAction = async ({ request, params }) => {
+export const updateAction = async ({ request, params }: any) => {
   const formData = await request.formData();
   const id: number = parseInt(params.id);
 
@@ -44,7 +44,7 @@ export const updateAction = async ({ request, params }) => {
 //DELETE
 export const deleteAction = async ({ params }: any) => {
   const id: number = parseInt(params.id);
-  await fetch(`${URL}/api/authors${id}`, {
+  await fetch(`${URL}/api/authors/${id}`, {
     method: "DELETE",
   });
   return redirect("/");

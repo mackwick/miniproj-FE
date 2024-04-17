@@ -1,12 +1,6 @@
 import { Link } from "react-router-dom";
 
-type AuthorProps = {
-  firstName: string;
-  lastName: string;
-  id: number;
-};
-
-function Author({ author }: AuthorProps) {
+function Author({ author }: any) {
   return (
     <Link to={`/${author.id}`}>
       <h1>

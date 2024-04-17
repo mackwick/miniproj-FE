@@ -1,13 +1,13 @@
 import Author from "../components/Author";
 import { Form, useLoaderData } from "react-router-dom";
 
-function Index(props: any) {
+function Index() {
   const allAuthors: any = useLoaderData();
 
   return (
     <div className="index">
       <h1>Index here</h1>
-      {allAuthors.map((author, i) => (
+      {allAuthors.map((author: any, i: number) => (
         <Author author={author} key={i} />
       ))}
       <hr />

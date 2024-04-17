@@ -1,17 +1,16 @@
 import { Link, useLoaderData, Form } from "react-router-dom";
 
-function Show(props: any) {
+function Show() {
   const anAuthor: any = useLoaderData();
   const id: number = anAuthor.id;
 
   return (
     <div className="show">
-      <h1>{anAuthor.firstName}</h1>
+      ß<h1>{anAuthor.firstName}</h1>
       <h1>{anAuthor.lastName}</h1>
       <Link to="/">
         <button>Go Back</button>
       </Link>
-
       <hr />
       <Form action={`/update/${id}`} method="put">
         <label htmlFor="firstName">
