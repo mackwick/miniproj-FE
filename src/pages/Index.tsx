@@ -1,5 +1,5 @@
 import Author from "../components/Author";
-import { useLoaderData } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
 
 function Index(props: any) {
   const allAuthors: any = useLoaderData();
@@ -10,6 +10,16 @@ function Index(props: any) {
       {allAuthors.map((author, i) => (
         <Author author={author} key={i} />
       ))}
+      <hr />
+      <Form action="/create" method="post">
+        <label htmlFor="firstName">
+          <input type="text" name="firstName" id="firstName" />
+        </label>
+        <label htmlFor="lastName">
+          <input type="text" name="lastName" id="lastName" />
+        </label>
+        <button>Add Author</button>
+      </Form>
     </div>
   );
 }
