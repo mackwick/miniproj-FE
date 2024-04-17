@@ -1,7 +1,8 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, Form } from "react-router-dom";
 
 function Show(props: any) {
   const anAuthor: any = useLoaderData();
+  const id: number = anAuthor.id;
 
   return (
     <div className="show">
@@ -10,6 +11,30 @@ function Show(props: any) {
       <Link to="/">
         <button>Go Back</button>
       </Link>
+
+      <hr />
+      <Form action={`/update/${id}`} method="put">
+        <label htmlFor="firstName">
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            defaultValue={anAuthor.firstName}
+          />
+        </label>
+        <label htmlFor="lastName">
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            defaultValue={anAuthor.lastName}
+          />
+        </label>
+        <button>Update Author</button>
+      </Form>
+      <Form action={`/delete/${id}`} method="post">
+        <button>Delete Author</button>
+      </Form>
     </div>
   );
 }
