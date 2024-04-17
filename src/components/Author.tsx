@@ -8,7 +8,7 @@ type AuthorProps = {
 
 function Author({ author }: AuthorProps) {
   return (
-    <Link to={`/api/authors/${author.id}`}>
+    <Link to={`/${author.id}`}>
       <h1>
         {author.firstName} {author.lastName}
       </h1>
